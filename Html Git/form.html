@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /** 
+        viết css dạng internal
+        selectors: bộ chọn **/
+        .left-form {
+            display: inline-block;
+            width: 100px;
+        }
+
+        div label:first-child {
+            color: rgb(230, 10, 203, 1);
+        }
+
+        form {
+            width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #title-form {
+            background-color: rebeccapurple;
+            padding: 10px 5px 10px 5px;
+        }
+
+        .row {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <form method="post" action="24h.com.vn/dangky">
+        <h3 id="title-form">Registration form</h3>
+        <div class="row">
+            <label style="color: blue;" for="" class="left-form">First Name</label>
+            <input type="text" placeholder="Enter first name" name="firstname">
+        </div>
+        <div class="row">
+            <label for="" class="left-form">Last Name</label>
+            <input type="text" placeholder="Enter last name" name="lastname">
+        </div>
+        <div class="row">
+            <label for="" class="left-form">Email</label>
+            <input type="email" placeholder="Enter email" name="email">
+        </div>
+        <div class="row">
+            <label for="" class="left-form">Date of birth</label>
+            <input type="date" placeholder="Enter email">
+        </div>
+        <div class="row">
+            <label for="" class="left-form">Image</label>
+            <input type="file" placeholder="Enter email">
+        </div>
+        <div>
+            <label for="" class="left-form">Gender</label>
+            <input type="radio">
+            <label>Male</label>
+            <input type="radio">
+            <label>Female</label>
+        </div>
+        <div>
+            <label for="" class="left-form">Address</label>
+            <textarea name="" id="" cols="50" rows="10"></textarea>
+        </div>
+        <div>
+            <label for="" class="left-form"></label>
+            <input type="button" value="Register">
+            <button type="reset">Reset</button>
+
+        </div>
+    </form>
+</body>
+
+</html>
