@@ -6,22 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
         /** 
         viết css dạng internal
         selectors: bộ chọn **/
         .left-form {
             display: inline-block;
             width: 100px;
+
+        }
+
+        .right-form {
+            display: inline-block;
+            width: 400px;
         }
 
         div label:first-child {
             color: rgb(230, 10, 203, 1);
         }
 
-        form {
-            width: 500px;
-            margin-left: auto;
-            margin-right: auto;
+        div label:first-child:hover {
+            color: rgb(253, 139, 0);
         }
 
         #title-form {
@@ -32,50 +42,151 @@
         .row {
             margin-bottom: 10px;
         }
+
+        body {
+            background-color: aquamarine;
+        }
+
+        .form-container {
+            width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: white;
+        }
+
+        .form-container form {
+            padding: 10px 10px 10px 10px;
+        }
+
+        /*
+                    display: inline-block;
+                    outline: none;
+                    cursor: pointer;
+                    padding: 0 16px;
+                    background-color: #0070d2;
+                    border-radius: 0.25rem;
+                    border: 1px solid #0070d2;
+                    color: #fff;
+                    font-size: 13px;
+                    line-height: 30px;
+                    font-weight: 400;
+                    text-align: center;
+                    :hover {
+                        background-color: #005fb2;  
+                        border-color: #005fb2;
+                    } 
+                
+        */
+        .btn {
+            padding: 6px 16px;
+            border-radius: 0.25rem;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .btn-reset:hover {
+            background-color: #005fb2;
+            border-color: #005fb2;
+        }
+
+        .btn-register:hover {
+            background-color: darkgrey;
+            border-color: darkgrey;
+        }
+
+        .btn-reset {
+            background-color: darkgray;
+            border: 1px solid darkgray;
+        }
+
+        .btn-register {
+            border: 1px solid #0070d2;
+            background-color: #0070d2;
+        }
+
+        /*
+            
+                padding: 6px 12px;
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 1.5;
+                color: #212529;
+                background-color: #fff;
+                background-clip: padding-box;
+                border: 1px solid #ced4da;
+                appearance: none;
+                border-radius: 4px;
+                transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+                :focus{
+                    color: #212529;
+                    background-color: #fff;
+                    border-color: #86b7fe;
+                    outline: 0;
+                    box-shadow: 0 0 0 0.25rem rgb(13 110 253 / 25%);
+                }
+                
+        */
+        .form-input {
+            padding: 6px 12px;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+
+        }
+
+        .form-input:focus {
+            border-color: #86b7fe;
+            outline: none;
+            box-shadow: 0 0 0 0.05rem rgb(13 110 253 / 25%);
+        }
     </style>
 </head>
 
 <body>
-    <form method="post" action="24h.com.vn/dangky">
-        <h3 id="title-form">Registration form</h3>
-        <div class="row">
-            <label style="color: blue;" for="" class="left-form">First Name</label>
-            <input type="text" placeholder="Enter first name" name="firstname">
-        </div>
-        <div class="row">
-            <label for="" class="left-form">Last Name</label>
-            <input type="text" placeholder="Enter last name" name="lastname">
-        </div>
-        <div class="row">
-            <label for="" class="left-form">Email</label>
-            <input type="email" placeholder="Enter email" name="email">
-        </div>
-        <div class="row">
-            <label for="" class="left-form">Date of birth</label>
-            <input type="date" placeholder="Enter email">
-        </div>
-        <div class="row">
-            <label for="" class="left-form">Image</label>
-            <input type="file" placeholder="Enter email">
-        </div>
-        <div>
-            <label for="" class="left-form">Gender</label>
-            <input type="radio">
-            <label>Male</label>
-            <input type="radio">
-            <label>Female</label>
-        </div>
-        <div>
-            <label for="" class="left-form">Address</label>
-            <textarea name="" id="" cols="50" rows="10"></textarea>
-        </div>
-        <div>
-            <label for="" class="left-form"></label>
-            <input type="button" value="Register">
-            <button type="reset">Reset</button>
+    <div class="container">
+        <div class="form-container">
+            <h3 id="title-form">Registration form</h3>
+            <form method="post" action="24h.com.vn/dangky">
+                <div class="row">
+                    <label style="color: blue;" for="" class="left-form">First Name</label>
+                    <input class="form-input" type="text" placeholder="Enter first name" name="firstname">
+                </div>
+                <div class="row">
+                    <label for="" class="left-form">Last Name</label>
+                    <input class="form-input" type="text" placeholder="Enter last name" name="lastname">
+                </div>
+                <div class="row">
+                    <label for="" class="left-form">Email</label>
+                    <input class="form-input" type="email" placeholder="Enter email" name="email">
+                </div>
+                <div class="row">
+                    <label for="" class="left-form">Date of birth</label>
+                    <input class="form-input" type="date" placeholder="Enter email">
+                </div>
+                <div class="row">
+                    <label for="" class="left-form">Image</label>
+                    <input type="file" placeholder="Enter email">
+                </div>
+                <div>
+                    <label for="" class="left-form">Gender</label>
+                    <input type="radio">
+                    <label>Male</label>
+                    <input type="radio">
+                    <label>Female</label>
+                </div>
+                <div>
+                    <label for="" class="left-form">Address</label>
+                    <textarea name="" id="" cols="50" rows="10"></textarea>
+                </div>
+                <div>
+                    <label for="" class="left-form"></label>
+                    <button type="button" class="btn btn-register">Register</button>
+                    <button type="reset" class="btn btn-reset">Reset</button>
 
+                </div>
+            </form>
         </div>
-    </form>
+
+    </div>
 </body>
 
 </html>
