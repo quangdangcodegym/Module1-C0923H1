@@ -11,14 +11,20 @@ body {
   display: flex;
 }
 .container-left {
-  width: 70%;
+  width: 60%;
 }
 .container-right {
-  width: 30%;
+  width: 40%;
 }
 .menu-left {
   display: flex;
   justify-content: space-between;
+}
+.menu-left button {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background-color: #ffffff;
+  color: black;
 }
 .btn {
   padding: 6px 32px;
@@ -29,12 +35,37 @@ body {
 .btn-primary {
   background-color: coral;
 }
+.btn-alert {
+  background-color: rgb(1, 255, 35);
+}
 .btn-primary:hover {
   background-color: coral;
   border-color: #005fb2;
 }
-.menu-left input {
+.menu-search {
   flex-grow: 1;
+  position: relative;
+}
+.menu-search input {
+  width: calc(100% - 24px);
+  height: 100%;
+  padding-left: 24px;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-bottom: 1px solid white;
+  color: white;
+}
+.menu-search input::placeholder {
+  color: white;
+}
+.menu-search input:focus {
+  outline: none;
+}
+.menu-search i {
+  position: absolute;
+  top: calc(50% - 1rem / 2);
+  margin-left: 6px;
+  color: white;
 }
 .menu-icon {
   font-size: 1.2rem;
@@ -49,4 +80,114 @@ body {
 }
 .menu-left > * {
   margin-right: 10px;
+}
+.menu-btn-container {
+  margin-top: 6px;
+  background-color: #fff;
+  height: calc(100vh - 52px);
+  padding: 6px;
+}
+/*
+
+      display: inline-block;
+      outline: none;
+      cursor: pointer;
+      font-size: 14px;
+      line-height: 1;
+      border-radius: 500px;
+      transition-property: background-color,border-color,color,box-shadow,filter;
+      transition-duration: .3s;
+      border: 1px solid transparent;
+      letter-spacing: 2px;
+      min-width: 160px;
+      text-transform: uppercase;
+      white-space: normal;
+      font-weight: 700;
+      text-align: center;
+      padding: 16px 14px 18px;
+      color: #fff;
+      background-color: #15883e;
+      height: 48px;
+      :hover{
+          background-color: #1db954;
+      }
+                
+*/
+.menu-btn-container button {
+  text-transform: uppercase;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  background-color: transparent;
+  padding: 6px 8px;
+}
+.menu-btn-container button:hover {
+  background-color: #00408c;
+}
+.product {
+  width: calc((100% - 30px) / 4);
+  transition: border-radius 0.5s;
+}
+.product img {
+  transition: border-radius 0.5s;
+}
+.product:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0.8;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+.product:hover img {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+.product img {
+  height: 200px;
+  object-fit: cover;
+  width: 100%;
+}
+.products-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  overflow-y: scroll;
+  max-height: 100%;
+}
+.menu-right {
+  display: flex;
+  justify-content: space-between;
+}
+.menu-right span {
+  background-color: #01306b;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+.menu-right-icon {
+  display: flex;
+}
+.orders-menu {
+  display: flex;
+}
+.orders-menu input {
+  flex-grow: 1;
+}
+.orders-container {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 34px);
+}
+.orders-main {
+  flex-grow: 1;
+}
+.orders-footer {
+  display: flex;
+}
+.orders-footer button {
+  width: 50%;
 }
