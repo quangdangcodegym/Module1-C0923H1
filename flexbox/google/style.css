@@ -1,0 +1,161 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-size: 16px;
+  font-family: "Times New Roman", Times, serif;
+  background-color: #73d5e1;
+}
+.menu-container {
+  display: flex;
+  justify-content: flex-end;
+  padding: 14px;
+}
+.menu-container ul {
+  list-style-type: none;
+}
+.menu-container ul {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.menu-container ul a {
+  text-decoration: none;
+}
+.menu-icon {
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+}
+.menu-icon:hover {
+  background-color: rgba(60, 64, 67, 0.08);
+}
+.menu-avatar img {
+  width: 2rem;
+  border-radius: 50%;
+}
+.main-container {
+  display: flex;
+  justify-content: center;
+}
+.main-google {
+  width: 40%;
+  padding-top: 50px;
+}
+.mg-logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+.mg-search {
+  display: flex;
+  background-color: #fff;
+  padding: 14px 20px;
+  border-radius: 20px;
+  gap: 8px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  margin-bottom: 14px;
+
+  position: relative;
+}
+.mg-search input {
+  flex-grow: 1;
+  border: none;
+}
+.mg-search input:focus {
+  outline: none;
+}
+.mg-shortcut {
+  width: 20%;
+  border-radius: 4px;
+  position: relative;
+  padding: 10px 0px;
+}
+.mg-shortcut:hover .mg-shortcut-icon {
+  display: inline-block;
+}
+.mg-shortcut-logo-container img {
+  max-width: 100%;
+}
+.mg-shortcuts {
+  display: flex;
+  flex-wrap: wrap;
+}
+.mg-shortcut-logo-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+.mg-shortcut-logo {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(60, 64, 67, 0.08);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mg-shortcut-logo img {
+  width: 60%;
+}
+.mg-shortcut-title {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  margin: 6px 0px;
+  font-size: 12px;
+}
+.mg-shortcut:hover {
+  background-color: rgba(60, 64, 67, 0.08);
+}
+.mg-shortcut-icon {
+  display: none;
+  width: 1rem;
+  height: 1rem;
+  text-align: center;
+  line-height: 1rem;
+  font-size: 0.5rem;
+  border-radius: 50%;
+  position: absolute;
+  top: 4px;
+  right: 4px;
+}
+.mg-shortcut-icon:hover {
+  background-color: rgba(60, 64, 67, 0.3);
+}
+.mg-search-results {
+  position: absolute;
+  top: 100%;
+  background-color: #fff;
+  border-radius: 14px;
+  width: 100%;
+  list-style-type: none;
+  padding: 0;
+  margin-left: -20px;
+  z-index: 999;
+  display: none;
+}
+.mg-search-results li {
+  padding: 8px 0px 8px 22px;
+  font-size: 12px;
+}
+.mg-search-results li:hover {
+  background-color: rgba(60, 64, 67, 0.08);
+}
+.mg-search-results li i {
+  margin-right: 8px;
+}
+.mg-search:has(.mg-txt-search:focus) {
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+.mg-txt-search:focus ~ ul {
+  display: block;
+  border-top-right-radius: 0px;
+  border-top-left-radius: 0px;
+}
