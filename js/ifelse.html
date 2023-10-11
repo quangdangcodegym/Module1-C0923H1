@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+        let avgPoint = +prompt("Nhập vào 1 điểm: "); // 15
+        if (avgPoint > 10 || avgPoint < 0) {
+            alert("Điểm không hợp lệ")
+        } else {
+            if (avgPoint <= 10 && avgPoint >= 8) {
+                alert("Học sinh giỏi");
+            } else {
+                if (avgPoint >= 7) {
+                    alert("Học sinh khá");
+                } else {
+                    if (avgPoint >= 5) {
+                        alert("Học sinh TB")
+                    }
+                    else {
+                        alert("Học sinh Yếu")
+                    }
+                }
+            }
+        }
+        */
+        let avgPoint = +prompt("Nhập vào 1 điểm: "); // 15
+        if (avgPoint > 10 || avgPoint < 0) {
+            alert("Diem khong hop le");
+        } else if (avgPoint <= 10 && avgPoint > 8) {
+            alert("Học sinh giỏi");
+        } else if (avgPoint >= 7) {
+            alert("Học sinh kha");
+        } else if (avgPoint >= 5) {
+            alert("Học sinh TB")
+        } else {
+            alert("Học sinh Yếu")
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" placeholder="Enter value 1:" />
+    <input type="text" placeholder="Enter value 2:" />
+    <button type="button" onclick="">Cong</button>
+    <script>
+        function handleAdd() {
+            let a = +document.getElementById("txt1").value;
+            let b = +document.getElementById("txt2").value;
+
+            alert(a + b);
+        }
+        function handleAdd1() {
+            let a = +document.querySelectorAll("input")[0].value;
+            let b = +document.querySelectorAll("input")[1].value;
+
+            // hiển thị hộp thoại cảnh báo
+            // alert(a + b);
+
+            // Hiển thị giá trị trong cửa sổ console khi F12
+            console.log(a + b);
+        }
+    </script>
+</body>
+
+</html>
