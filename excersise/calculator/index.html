@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            /* box-sizing: border-box; */
+        }
+
+        .container {
+            width: 300px;
+        }
+
+        .form-control {
+            width: 100%;
+            text-align: end;
+            padding-right: 12px;
+        }
+
+        .calc-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+            flex-wrap: wrap;
+        }
+
+        .calc-button {
+            width: calc(calc(100% - 30px) / 4);
+            /* border: 1px solid black; */
+            display: flex;
+            justify-content: center;
+        }
+
+        .calc-button button {
+            padding: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="calc-input">
+            <input type="text" class="form-control">
+        </div>
+        <div class="calc-buttons">
+            <div class="calc-button">
+                <button type="button" onclick="handleBtnClick(1)">1</button>
+            </div>
+            <div class="calc-button">
+                <button type="button" onclick="handleBtnClick(2)">2</button>
+            </div>
+            <div class="calc-button">
+                <button type="button" onclick="handleBtnClick(3)">3</button>
+            </div>
+            <div class="calc-button">
+                <button type="button" onclick="handleBtnClick('+')">+</button>
+            </div>
+            <div class="calc-button">
+                <button type="button" onclick="handleBtnClick(4)">4</button>
+            </div>
+            <div class="calc-button">
+                <button type="button" onclick="handleBtnClick(5)">5</button>
+            </div>
+            <div class="calc-button">
+                <button type="button" onclick="handleBtnClick(6)">6</button>
+            </div>
+            <div class="calc-button">
+                <button type="button" onclick="handleBtnClick('-')">-</button>
+            </div>
+            <div class="calc-button">
+                <button type="button" onclick="handleBtnClick(7)">7</button>
+            </div>
+            <div class="calc-button">
+                <button type="button" onclick="handleBtnClick(8)">8</button>
+            </div>
+            <div class="calc-button">
+                <button type="button" onclick="handleBtnClick(9)">9</button>
+            </div>
+            <div class="calc-button">
+                <button type="button" onclick="handleBtnClick('*')">*</button>
+            </div>
+            <div class="calc-button">
+                <button type="button" onclick="handleBtnClick('C')">C</button>
+            </div>
+            <div class="calc-button">
+                <button type="button" onclick="handleBtnClick(0)">0</button>
+            </div>
+            <div class="calc-button">
+                <button type="button" onclick="handleBtnClick('=')">=</button>
+            </div>
+            <div class="calc-button">
+                <button type="button" onclick="handleBtnClick('/')">/</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function handleBtnClick(btn) {
+            if (btn == 'C') {
+                document.querySelector(".calc-input input[type='text']").value = '';
+            } else if (btn == '=') {
+                let txt = document.querySelector(".calc-input input[type='text']").value;
+                if (bieuThucHopLe(txt) && txt != '') {
+                    let result = eval(txt);
+                    document.querySelector(".calc-input input[type='text']").value = result;
+                } else {
+                    alert("Không hợp lệ");
+                }
+
+            } else {
+                let txt = document.querySelector(".calc-input input[type='text']").value;
+                txt += btn;
+                document.querySelector(".calc-input input[type='text']").value = txt;
+            }
+
+        }
+        function bieuThucHopLe(bieuThuc) {
+            const stack = [];
+            const operators = "+-*/";
+
+            for (let i = 0; i < bieuThuc.length; i++) {
+                const char = bieuThuc[i];
+
+                if (char === "(" || char === "{" || char === "[") {
+                    stack.push(char);
+                } else if (char === ")" || char === "}" || char === "]") {
+                    if (!stack.length) {
+                        return false; // Dấu ngoặc đóng không có dấu ngoặc mở tương ứng
+                    }
+                    const top = stack.pop();
+                    if (
+                        (char === ")" && top !== "(") ||
+                        (char === "}" && top !== "{") ||
+                        (char === "]" && top !== "[")
+                    ) {
+                        return false; // Dấu ngoặc không đúng cặp
+                    }
+                } else if (operators.includes(char) || (i === 0 && char === "-")) {
+                    if (
+                        (i === 0 && (bieuThuc.length === 1 || operators.includes(bieuThuc[i + 1]))) ||
+                        (i === bieuThuc.length - 1 && (char === "-" || operators.includes(bieuThuc[i - 1]))) ||
+                        (i > 0 && i < bieuThuc.length - 1 && operators.includes(bieuThuc[i - 1]) && operators.includes(bieuThuc[i + 1]))
+                    ) {
+                        return false; // Toán tử không đứng đúng vị trí hoặc không đúng cú pháp
+                    }
+                } else if (i === 0 && !/\d/.test(char)) {
+                    return false; // Ký tự đầu không phải số hoặc dấu trừ
+                }
+            }
+
+            return stack.length === 0;
+        }
+
+    </script>
+</body>
+
+</html>

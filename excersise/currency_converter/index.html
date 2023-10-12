@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <form>
+        <div>
+            <input type="text" placeholder="Nhập vào số tiền">
+            <select name="currency-from" id="">
+                <option value="VND">VND</option>
+                <option value="USD">USD</option>
+            </select>
+            <select name="currency-to" id="">
+                <option value="USD">USD</option>
+                <option value="VND">VND</option>
+            </select>
+            <button type="button" onclick="handleConvertClick()">Convert</button>
+            <div class="result" style="display: none;">
+                <label for="">KẾT QUẢ: </label>
+            </div>
+        </div>
+    </form>
+    <script>
+        function handleConvertClick() {
+            let money = +document.querySelector("input").value;
+            let cFrom = document.querySelector("select[name='currency-from']").value;
+            let cTo = document.querySelector("select[name='currency-to']").value;
+            let result = null;
+
+            // console.log("Tiền: " + money + " From: " + cFrom + " To: " + cTo);
+            // string literals
+            // let results = `Tiền ${money} From ${cFrom} To ${cTo}`;
+            console.log(`Tiền ${money} From ${cFrom} To ${cTo}`);
+
+            if (cFrom == 'USD' && cTo == 'VND') {
+                result = money * 23000;
+            } else if (cFrom == 'USD' && cTo == 'USD' || cFrom == 'VND' && cTo == 'VND') {
+                result = money;
+            } else {
+                result = money / 23000;
+            }
+            document.querySelector('.result').style.display = 'block';
+            document.querySelector(".result label").innerText = `KẾT QUẢ là: ${result}`;
+
+        }
+    </script>
+</body>
+
+</html>
