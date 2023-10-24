@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /**
+      // Bài 1: Tính tổng các giá trị lớn hơn giá trị đứng liền trước nó trong mảng 1 chiều các số thực
+
+      let arr = [5.1, 3.1, 4, 8, 10];
+
+      // đầu vào: mảng, đầu ra: tổng các giá trị lớn hơn giá trị đứng liền trước
+      // tên hàm: sumAtNumberLargerBfNumber
+
+      function sumAtNumberLargerBfNumber(numbers) {
+        let total = 0;
+        for (let i = 1; i < numbers.length; i++) {
+          if (numbers[i] > numbers[i - 1]) {
+            total += numbers[i];
+          }
+        }
+        return total;
+      }
+
+      console.log(sumAtNumberLargerBfNumber(arr));
+
+      let arr1 = [1, 7, 1, 4]; // 11
+      console.log(sumAtNumberLargerBfNumber(arr1));
+
+
+      //   Đếm số nguyên tố trong mảng
+
+      // đầu vào: mảng, đầu ra: số lượng các số nguyên tố
+      // tên hàm: countPrimes
+      function countPrimes(numbers) {
+        let count = 0;
+        for (let i = 0; i < numbers.length; i++) {
+          if (checkPrime(numbers[i]) == true) {
+            count++;
+          }
+        }
+        return count;
+      }
+      function checkPrime(number) {
+        if (number <= 1) {
+          return false;
+        }
+        for (let j = 2; j < number - 1; j++) {
+          if (number % j == 0) {
+            return false;
+          }
+        }
+        return true;
+      }
+
+      console.log(countPrimes([4, 5, 9, 1, 7]));
+
+
+      //Bài 4: Đảo ngược mảng ban đầu
+      let arr = [7, 1, 4, 3]; // [3,4,1,7];
+
+      // tên hàm: reverse, đầu vào: mảng, đầu ra: chính mảng đó
+
+      function reverse(arr) {
+        for (let i = 0; i < arr.length / 2; i++) {
+          // a[i] vs arr[lenght-1-i] : a[0] vs arr[3], a[1] vs arr[2]
+          let temp = arr[i];
+          arr[i] = arr[arr.length - 1 - i];
+          arr[arr.length - 1 - i] = temp;
+        }
+      }
+
+      reverse(arr);
+      console.log(arr);
+
+
+      //Bài 4: Đảo ngược mảng ban đầu
+      let arr = [7, 1, 4, 3, 5]; // [3,4,1,7];
+
+      function reverseType2(arr) {
+        let left = 0;
+        let right = arr.length - 1;
+
+        while (left < right) {
+          let temp = arr[left];
+          arr[left] = arr[right];
+          arr[right] = temp;
+
+          left++;
+          right--;
+        }
+      }
+
+      reverseType2(arr);
+      console.log(arr);
+
+
+      //Bài 13: Hãy cho biết tất cả các phần tử trong mảng a có nằm trong mảng b không
+      let a = [2, 3, 1];
+      let b = [2, 5, 3, 0];
+
+      // tên hàm: checkAllElementsInArray; đầu vào: mảng a, mảng b; đầu ra: true, false
+
+      function checkAllElementsInArray(a, b) {
+        // let flag = true;
+        for (let i = 0; i < a.length; i++) {
+          let flag2 = false;
+          for (let j = 0; j < b.length; j++) {
+            if (a[i] == b[j]) {
+              flag2 = true;
+              break;
+            }
+          }
+          if (flag2 == false) {
+            // flag = false;
+            return false;
+          }
+        }
+        return true;
+      }
+
+      console.log(checkAllElementsInArray(a, b));
+      **/
+    </script>
+  </body>
+</html>

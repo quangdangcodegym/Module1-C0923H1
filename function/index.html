@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*
+      console.log("HELLO ");
+      console.log("HELLO ");
+      console.log("HELLO ");
+      console.log("HELLO ");
+      console.log("HELLO ");
+
+      for (let i = 0; i < 5; i++) {
+        console.log("HELLO ");
+      }
+      for (let i = 0; i < 5; i++) {
+        console.log("QUANG DANG ");
+      }
+
+      //   ĐỊNH NGHĨA HÀM: function tenHam(tham số 1 (parameter), tham số 2,... tham số n)
+      // Quy tắc đặt tên hàm:
+      function printMessage(message, size) {
+        console.log(size);
+        for (let i = 0; i < size; i++) {
+          console.log(message);
+        }
+      }
+
+      // GỌI HÀM (call function, invoke): tenHam(đối số 1 (arguments), đối số 2, ..., đối số n)
+      //   printMessage("HELLO", 5);
+      //   printMessage("QUANG DANG", 20);
+
+      printMessage();
+
+
+      // Viết hàm: tính tổng 2 số. Đầu vào: 2 số a,b .Đầu ra là tổng của 2 số
+      function sum(a, b) {
+        // let total = a + b;
+
+        return a + b;
+        console.log("END FUNCTION");
+      }
+
+      //   let t = sum(1, 2);
+      //   console.log(t);
+
+      console.log(sum(1, 2));
+
+
+      function sum(a, b) {
+        let total = a + b; // biến total là biến cục bộ, chỉ có phạm vi trong hàm, ra khỏi hàm thì ko có giá trị
+
+        return a + b;
+        console.log("END FUNCTION");
+      }
+
+      sum(5, 5);
+
+      console.log(total);
+
+
+      let total; // biến toàn cục: bên trong hàm có thể sủ dụng được
+
+      sum(5, 5);
+      function sum(a, b) {
+        let total = a + b;
+        return a + b;
+      }
+
+      sum(2, 2);
+      console.log(total);
+
+
+      function printMessage(message, size) {
+        message = "HELLO";
+        for (let i = 0; i < size; i++) {
+          console.log(message);
+        }
+      }
+
+      let size = 10;
+      let message = "CODEGYM";
+
+      printMessage(message, size);  // printMessage("CODEGYM", 10);
+
+      console.log(message);
+
+      // !----------------------------------------------------------------
+      // truyền giá trị: pass by value (number, string, boolean,..)
+      let a = 5;
+      let b = 10;
+
+      function swap(a, b) {     // let a = 5, let b = 10
+        let c = a;
+        a = b;
+        b = c;
+      }
+
+      swap(a, b);   // swap(5,10)
+      console.log(a);
+      console.log(b);
+
+
+      //!----------------------------------------------------------------
+      let a = 5;
+      let b = 10;
+
+      function swap(a, b) {
+        // let a = 5, let b = 10
+        let c = a;
+        a = b;
+        b = c;
+        return [a, b];
+      }
+
+      let results = swap(a, b); // swap(5,10) => results: [10, 5]
+      a = results[0];
+      b = results[1];
+
+      */
+
+      // TRuyền tham chiếu (pass reference): truyền mảng, truyền object
+      let arr = [3, 10];
+      function swap(arr) {
+        let temp = arr[0];
+        arr[0] = arr[1];
+        arr[1] = temp;
+      }
+
+      swap(arr); // swap( [3,10])  HAY swap(0x32344)
+
+      console.log(arr);
+    </script>
+  </body>
+</html>

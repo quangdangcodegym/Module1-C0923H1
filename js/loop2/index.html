@@ -4,9 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      table {
+        border-collapse: collapse;
+      }
+      table td {
+        padding: 20px;
+      }
+    </style>
   </head>
   <body>
-    <table>
+    <table border="1">
       <!-- <tr>
         <td>1</td>
         <td>2</td>
@@ -26,8 +34,8 @@
 
     <script>
       let str = "";
-      let col = 100;
-      let row = 100;
+      let col = 10;
+      let row = 10;
       for (let i = 1; i <= row; i++) {
         str += "<tr>";
         for (let j = 1; j <= col; j++) {
