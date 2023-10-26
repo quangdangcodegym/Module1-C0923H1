@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class Mobile {
+        constructor(name) {
+          this.battery = 0;
+          this.draft = "";
+          this.inboxs = [];
+          this.sents = [];
+          this.status = false;
+          this.name = name;
+        }
+        checkStatus() {
+          return this.status;
+        }
+        turnOn() {
+          this.status = true;
+        }
+        turnOff() {
+          this.status = false;
+        }
+        setDraft(draft) {
+          this.draft = draft;
+        }
+        receiveMessage(phone, message) {
+          this.inboxs.push(message);
+          phone.sents.push(message);
+        }
+        sendMessage(phone, message) {
+          if (this.status) {
+            this.sents.push(message);
+            phone.inboxs.push(message);
+            this.decreaseBattery();
+          }
+        }
+        viewInboxs() {
+          if (this.status) {
+            for (let i = 0; i < this.inboxs.length; i++) {
+              console.log(this.inboxs[i]);
+            }
+          }
+        }
+        viewSents() {
+          if (this.status) {
+            for (let i = 0; i < this.sents.length; i++) {
+              console.log(this.sents[i]);
+            }
+            this.decreaseBattery();
+          }
+        }
+        decreaseBattery() {
+          this.battery = this.battery - 1;
+          if (this.battery < 0) {
+            this.battery = 0;
+            this.status = false;
+          }
+        }
+      }
+
+      let samsung = new Mobile("samsung");
+      let iphone = new Mobile("iphone");
+
+      samsung.sendMessage(iphone, "Em ăn cơm chưa");
+      samsung.sendMessage(iphone, "anh yêu em");
+
+      console.log(samsung.viewSents());
+      console.log(iphone.viewInboxs());
+    </script>
+  </body>
+</html>

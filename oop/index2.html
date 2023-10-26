@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      #block1 {
+        width: 200px;
+        height: 150px;
+        background-image: linear-gradient(red, yellow);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="block1">
+      <label for="">HELLO</label>
+    </div>
+    <script>
+      let Student = function (id, name, age, gender, phone) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+        this.phone = phone;
+        this.hobbies = [];
+        this.getPhone = function () {
+          let arr = this.phone.split(""); // ["1", "2", "3", "4"] //
+          let results = arr.map((value, index, arr) => {
+            if (index < arr.length - 3) {
+              return value;
+            } else {
+              return "x";
+            }
+          });
+          return results.join("");
+        };
+        this.addHobbie = function (hobbie) {
+          this.hobbies.push(hobbie);
+        };
+        this.toString = function () {
+          return `Name: ${this.name} age: ${this.age} hobbies: ${this.hobbies}`;
+        };
+      };
+
+      let s1 = new Student(1, "Minh Quang", 23, "MALE", "123456789");
+
+      console.log(s1.toString());
+    </script>
+  </body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /**
+      let q = [100, 1.65];
+      let h = [40, 165];
+      /**
+         Class là bản thiết kế => để tạo đối tượng cụ thể
+            - gồm thuộc tính
+                + constructor dùng đẻ khởi tạo đối tượng
+                + this.color chính là thuộc tính, thuộc tính: là đặc điểm của đối tượng
+            - phương thức - hành vi - chức năng - hành động
+    
+
+      class Car {
+        // constructor() {
+        //   this.color = "black";
+        //   this.name = "";
+        //   this.type = null;
+        // }
+        constructor(color, name, type) {
+          this.color = color;
+          this.name = name;
+          this.type = type;
+          this.gas = 0;
+        }
+        toString() {
+          return `name: ${this.name} color: ${this.color} type: ${this.type} gas: ${this.gas}`;
+        }
+        setGas(gas) {
+          if (gas < 0 || gas > 100) {
+            throw new IllegalArgumentException();
+          }
+          this.gas = gas;
+        }
+      }
+
+      let car1 = new Car("red", "Toyota", "prius");
+      let car2 = new Car("red", "BMW", "2 thì");
+      console.log(car1.toString());
+      console.log(car2.toString());
+
+      let gas = prompt("Bạn muốn đổ bao nhiêu");
+
+      console.log("GAS:" + car1.gas);
+      car1.gas = gas;
+      //   car1.setGas(gas);
+      //   console.log(car1.toString());
+
+
+      **/
+      // QUY TẮC ĐẶT TÊN LỚP: viết hoa chữ đầu, Pascal,
+      class Student {
+        constructor(id, name, age, gender, phone) {
+          this.id = id;
+          this.name = name;
+          this.age = age;
+          this.hobbies = [];
+          this.gender = gender;
+          this.phone = phone;
+          this.passedModule = [];
+        }
+        getPhone() {
+          let arr = this.phone.split(""); // ["1", "2", "3", "4"] //
+          let results = arr.map((value, index, arr) => {
+            if (index < arr.length - 3) {
+              return value;
+            } else {
+              return "x";
+            }
+          });
+          return results.join("");
+        }
+        addHobbie(hobbie) {
+          this.hobbies.push(hobbie);
+        }
+        toString() {
+          return `Name: ${this.name} age: ${this.age} hobbies: ${this.hobbies}`;
+        }
+      }
+      /**
+      let s1 = new Student(1, "Minh Quang", 23, "MALE", "123456789");
+      let s2 = new Student(2, "Minh HIệp", 23, "MALE", "123456789");
+      let s3 = new Student(3, "Phú", 27, "MALE", "123456789");
+
+      s1.addHobbie("BIDA");
+      s1.addHobbie("CHOI GAI");
+      s1.addHobbie("XXX");
+      console.log("HỌC SINH THỨ 1 tên:" + s1.toString());
+
+      **/
+
+      let s1 = new Student(1, "Minh Quang", 23, "MALE", "123456789");
+      let s2 = new Student(2, "Minh HIệp", 23, "MALE", "123456789");
+      let s3 = new Student(3, "Phú", 27, "MALE", "123456789");
+
+      let C09 = [s1, s2, s3];
+      for (let i = 0; i < C09.length; i++) {
+        C09[i].passedModule.push("Module 1");
+      }
+    </script>
+  </body>
+</html>
