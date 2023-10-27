@@ -18,19 +18,30 @@
       <div class="frmCreate">
         <div class="row">
           <label for="">Product Name:</label>
-          <input type="text" placeholder="Enter yourname" />
+          <input name="txtName" type="text" placeholder="Enter yourname" />
         </div>
         <div class="row">
           <label for="">Quantity:</label>
-          <input type="text" placeholder="Enter quantity" />
+          <input
+            name="txtQuantity"
+            type="number"
+            placeholder="Enter quantity"
+          />
         </div>
         <div class="row">
           <label for="">Price:</label>
-          <input type="text" placeholder="Enter price" />
+          <input name="txtPrice" type="number" placeholder="Enter price" />
+        </div>
+        <div class="row">
+          <label for="">Category:</label>
+          <select name="sCategory">
+            <option value="1">Gia Cầm</option>
+            <option value="2">Gia súc</option>
+          </select>
         </div>
         <div class="row">
           <label for=""></label>
-          <button class="btnAdd">Add</button>
+          <button class="btnAdd" onclick="handleBtnAdd()">Add</button>
         </div>
       </div>
       <div class="tbMain">
@@ -39,16 +50,18 @@
             <tr>
               <th>ID</th>
               <th>Product Name</th>
+              <th>Category</th>
               <th>Quantity</th>
               <th>Price</th>
               <th>Amount</th>
               <th>Actions</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
+          <tbody id="tbodyMain">
+            <!-- <tr>
               <td>P1</td>
               <td>Ga</td>
+              <th>Gia cầm</th>
               <td>5</td>
               <td>120000</td>
               <td>600000</td>
@@ -64,6 +77,7 @@
             <tr>
               <td>P1</td>
               <td>Ga</td>
+              <th>Gia cầm</th>
               <td>5</td>
               <td>120000</td>
               <td>600000</td>
@@ -77,15 +91,16 @@
               </td>
             </tr>
             <tr>
-              <td colspan="4" class="tb-last-row tb-last-row-total">
+              <td colspan="5" class="tb-last-row tb-last-row-total">
                 Total amount
               </td>
               <td class="tb-last-row">4.955.899 ₫</td>
               <td></td>
-            </tr>
+            </tr> -->
           </tbody>
         </table>
       </div>
     </div>
+    <script src="app.js"></script>
   </body>
 </html>
