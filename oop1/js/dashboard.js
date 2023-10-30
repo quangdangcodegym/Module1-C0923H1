@@ -1,29 +1,4 @@
-class Product {
-    constructor(id, name, price, quantity, category) {
-        this.id = id;
-        this.name = name;
-        this.quantity = quantity;
-        this.price = price;
-        this.category = category;
-    }
-}
-class Category {
-    constructor(id, name) {
-        this.id = id;
-        this.name = name;
-    }
-}
-let giacam = new Category(1, "Gia cầm");
-let giasuc = new Category(2, "Gia súc");
 
-let categories = [giacam, giasuc];
-
-let p1 = new Product(1, "Gà", 220000, 5, giacam);
-let p2 = new Product(2, "Vịt", 240000, 5, giacam);
-let p3 = new Product(3, "Heo", 500000, 3, giasuc);
-
-let products = [p1, p2, p3];
-let isEditing = false;
 function renderProducts() {
     let eTbodyMain = document.querySelector("#tbodyMain");
 
@@ -72,12 +47,18 @@ function handleBtnAdd() {
     let categoryId = document.querySelector(".frmCreate select[name='sCategory'").value;
 
     let cate = findCategoryById(categoryId);
-    let pNew = new Product(products.length + 1, name, price, quantity, cate);
+    let pNew = new Product(findMaxId(), name, price, quantity, cate);
 
     if (validateProduct(pNew) == true) {
         products.push(pNew);
+        localStorage.setItem("KEY_PRODUCTS", JSON.stringify(products));
         renderProducts();
     }
+}
+function findMaxId() {
+    let productsCopy = [...products];
+    productsCopy.sort((a, b) => a.id - b.id);
+    return productsCopy[productsCopy.length - 1].id + 1;
 }
 function findCategoryById(categoryId) {
     let cate = null;
@@ -135,9 +116,11 @@ function handleItemClick(id) {
         strSelect += '</select>';
         tdCategory.innerHTML = strSelect;
 
+        //<i class="fa-solid fa-check"></i>
         tdAction.innerHTML = `
         <a class="btn btn-edit" onclick="handleUpdate(${id})">
-            <i class="fa-solid fa-check"></i>
+            
+            <i class="fa-solid fa-pen-to-square"></i>
         </a>
         <a class="btn btn-delete" onclick='handleCancel(${id})'>
             <i class="fa-solid fa-xmark"></i>
@@ -174,6 +157,7 @@ function handleUpdate(id) {
     let productUpdate = new Product(id, name, price, quantity, cate);
     if (validateProduct(productUpdate)) {
         updateProduct(id, productUpdate);
+        localStorage.setItem(KEY_PRODUCTS, JSON.stringify(products));
         renderProducts();
     }
 }
@@ -219,6 +203,7 @@ function handleRemoveItemClick(id) {
     let check = confirm(`Are you sure you want to remove ${product.name}`);
     if (check) {
         deleteProductById(id);
+        localStorage.setItem(KEY_PRODUCTS, JSON.stringify(products));
         renderProducts();
     }
 }
@@ -229,7 +214,4 @@ function deleteProductById(id) {
             break;
         }
     }
-}
-function formatCurrency(number) {
-    return number.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' });
 }
