@@ -11,6 +11,7 @@ body {
   width: 60%;
   margin-right: auto;
   margin-left: auto;
+  margin-top: 30px;
 }
 .main-products {
   margin-top: 10px;
@@ -51,6 +52,13 @@ body {
   display: flex;
   justify-content: space-between;
   background-color: rgb(255, 255, 255);
+  background-color: darkorchid;
+  padding: 6px;
+  border-radius: 6px;
+  color: white;
+}
+.menu-head a {
+  color: white;
 }
 .icon-profile {
   /*
@@ -96,7 +104,7 @@ body {
   display: none;
 }
 .menu-item ul li {
-  background-color: chartreuse;
+  background-color: #bb7adc;
 }
 .menu-item:hover ul {
   display: block;
@@ -105,7 +113,7 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
-  background-color: cornsilk;
+  background-color: #bb7adc;
 }
 .cart-item img {
   width: 100px;
